@@ -1,0 +1,598 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nosotros {
+    font-family: "Poppins", Sans-serif;
+}
+
+.slider li {
+    list-style-type: none;
+}
+
+.slider ul {
+    padding-left: 0rem;
+}
+
+.caja-logo {
+    width: 100%;
+}
+
+.logo-redes {
+    width: 20%;
+}
+
+.section-header-logosredes {
+    width: 50%;
+}
+
+.div-header {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1/2fr;
+    align-items: self-end;
+    width: 100%;
+}
+
+.section-header-logosredes {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    vertical-align: baseline;
+    margin-left: 30%;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    column-gap: 0px;
+    flex-flow: wrap;
+    justify-items: center;
+    padding: 10px;
+    list-style-type: none;
+    white-space: nowrap!important;
+    background-color: rgb(104, 109, 118);
+    width: 100%;
+    margin: 0;
+    border-radius: 10px;
+}
+
+.nav-menu li {
+    text-align: center;
+    background-color: rgb(55, 58, 64);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 4px solid black transparent;
+}
+
+.nav-menu li:hover {
+    font-weight: bold;
+    padding: 5px;
+}
+
+.slider {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+}
+
+.slider ul {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.slider li {
+    list-style: none;
+    width: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* .marcadores {
+    padding: 10px;
+}
+
+.inspira {
+    padding: 10px;
+}
+
+.agendas {
+    padding: 10px;
+} */
+
+.banner1 img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.banners {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.banner1 {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 10px;
+    align-items: center;
+}
+
+.banner1 a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.banner1 li {
+    list-style-type: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(184, 255, 249);
+    background-color: rgb(170, 164, 146);
+    text-align: center;
+    border-radius: 5px;
+    width: 50%;
+    height: 30px;
+}
+
+.banner1 li:hover {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.home-module-ideas {
+    padding: 10px;
+    background-image: url(../img/organizar.jpeg);
+    font-size: 125%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    margin: 10px;
+}
+
+.home-module-ideas a {
+    text-decoration: none;
+    color: rgba(121, 121, 121, 0.688);
+}
+
+.home-module-ideas a:hover {
+    font-weight: bold;
+}
+
+.home-module-ideas li {
+    list-style-type: none;
+    padding: 75px;
+    text-align: center;
+}
+
+.footer {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(66, 194, 255);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-size: 80%;
+    border-bottom: 5px solid white;
+}
+
+.contact {
+    grid-area: contact;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.dir {
+    grid-area: dir;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.direccion li {
+    list-style-type: none;
+}
+
+.hov a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+.hov a:hover {
+    font-weight: bold;
+}
+
+.horario-atencion {
+    grid-area: horarios-atencion;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.tel {
+    font-family: "Comic Sans MS,Arial,Verdana";
+    color: white;
+    text-decoration: none;
+    justify-self: center;
+    align-self: center;
+    margin-left: 120px;
+    padding: 20px;
+    grid-area: tel;
+}
+
+.tel:hover {
+    font-weight: bold;
+}
+
+.barcala {
+    margin-left: 15px;
+    grid-area: barcala;
+}
+
+.dir-oct,
+.dir-barcala,
+.dir-salto {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.octubre {
+    margin-left: 15px;
+    grid-area: octubre;
+}
+
+.salto {
+    margin-left: 15px;
+    grid-area: salto;
+}
+
+.horarios {
+    grid-area: horarios;
+    margin-left: 20px;
+    margin-top: 20px;
+    line-height: 30px;
+}
+
+.contacto,
+.direccion,
+.horario-de-atencion {
+    border-bottom: 2px solid white;
+}
+
+
+/*PRESUPUESTO*/
+
+.heading-bar {
+    border-bottom: 1px solid#d9d9d9;
+    padding: 6px 0 0;
+    margin: 0 0 22px;
+    position: relative;
+}
+
+.heading-bar h2 {
+    margin: 10px;
+    font-size: 24px;
+    color: #333;
+    line-height: 24px;
+    padding-bottom: 6px;
+    border-bottom: 4px solid rgb(66, 194, 255);
+    display: inline-block;
+    margin-bottom: -2px;
+    border-color: rgb(66, 194, 255);
+}
+
+form h3 {
+    width: 100%;
+    margin: 10px;
+    font-size: 18px;
+    color: rgb(66, 194, 255);
+    display: inline-block;
+    border-color: rgb(66, 194, 255);
+}
+
+.form-group {
+    margin: 10px;
+}
+
+.form-comentarios,
+.form-control {
+    width: 100%;
+}
+
+.form-group label {
+    font-stretch: narrower;
+}
+
+.radios {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 20px;
+}
+
+.botones {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    margin-left: 200px;
+    column-gap: 25px;
+}
+
+
+/*CONTACTO.HTML*/
+
+.contactos {
+    text-align: center;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.contacto-formas {
+    padding-bottom: 20px;
+}
+
+.contacto-formas a {
+    text-decoration: none;
+    color: black;
+}
+
+.form-contact {
+    color: #33333382;
+}
+
+.form-group1 {
+    padding-bottom: 20px;
+    margin-left: 10px;
+}
+
+.mapa-central {
+    width: 100%;
+}
+
+
+/* NOSOTROS.HTML */
+
+.historia {
+    padding: 100px;
+    width: 100%;
+    background-color: rgb(66, 194, 255);
+    text-align: center;
+    font-family: "Poppins", Sans-serif;
+    color: rgb(104, 109, 118);
+}
+
+.historia-h2 {
+    padding: 40px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: rgb(66, 194, 255) 5px 1px 4px;
+    box-sizing: inherit;
+}
+
+.historia-p {
+    padding: 30px;
+    width: 100%;
+    text-align: center
+}
+
+.galeria-h3 {
+    text-shadow: rgb(66, 194, 255) 3px 1px 2px;
+    text-align: center;
+}
+
+.galeria img {
+    width: 25%;
+    margin: 10px;
+}
+
+.galeria {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+/*PRODUCTOS*/
+
+.foto-producto img {
+    width: 70%;
+}
+
+.lead,
+.precio,
+.btn {
+    font-size: 70%;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    justify-items: center;
+    padding: 15px;
+    border: 1px solid #aab1bd;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+@media(min-width:576px) {
+    .div-header {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        align-items: self-end;
+    }
+    .section-header-logosredes {
+        margin-left: 50%;
+    }
+    .nav-menu {
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+        background-color: rgb(104, 109, 118);
+        width: 100%;
+    }
+    .nav-menu li {
+        background-color: rgb(55, 58, 64);
+        border-radius: 10px;
+        width: 100%;
+    }
+    .slider {
+        height: 150px;
+    }
+    .banner1 img {
+        width: 80%;
+        border-radius: 10px;
+    }
+    .banners {
+        width: 100%;
+    }
+    .banner1 li {
+        width: 80%;
+    }
+    .home-module-ideas {
+        font-size: 125%;
+        width: 100%;
+        margin: 10px;
+    }
+    .home-module-ideas li {
+        padding: 75px;
+    }
+    .tel {
+        margin-left: 50px;
+    }
+}
+
+@media(min-width:768px) {
+    /* .caja-logo {
+        width: 100%;
+    } */
+    /* .div-header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1/2fr;
+        align-items: self-end;
+        width: 100%;
+    } */
+    .caja-logo {
+        width: 10%;
+    }
+    .nav-menu {
+        grid-template-columns: 15% 15% 15% 15% 15%;
+        background-color: rgb(66, 194, 255);
+    }
+    .section-header-logosredes {
+        width: 20%;
+        justify-items: end;
+        margin-left: 85%;
+    }
+    .nav-menu li {
+        background-color: transparent;
+        border-radius: 0px;
+        width: 100%;
+    }
+    .slider {
+        height: 250px;
+    }
+    .banner1 img {
+        width: 100%;
+        border-radius: 20px;
+    }
+    .banner1 li {
+        width: 100%;
+    }
+    .home-module-ideas {
+        font-size: 250%;
+    }
+    .home-module-ideas li {
+        padding: 150px;
+    }
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1r;
+        grid-template-areas: "contact dir horario-atencion" "tel barcala horarios" "tel octubre horarios" "tel salto horarios";
+        height: 340px;
+    }
+    /*Presupuesto*/
+    .form-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 20px;
+    }
+    .solapa {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 0px;
+    }
+    .terminacion {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+    .form-control {
+        width: 50%;
+    }
+    .form-comentarios {
+        width: 80%;
+    }
+    /*CONTACTO*/
+    .contactos {
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 100px;
+        margin: 100px 0px 100px 0px;
+    }
+    .contacto-formas {
+        padding-bottom: 0px;
+    }
+    .form-group1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .mapa-central {
+        width: 80%;
+    }
+    .form-group1 .form-control {
+        width: 90%;
+    }
+    /*PRODUCTOS*/
+    .foto-producto img {
+        width: 40%;
+    }
+    .lead,
+    .precio,
+    .btn {
+        font-size: 90%;
+    }
+    .item {
+        grid-template-columns: 1fr;
+    }
+    .items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
