@@ -2,14 +2,14 @@ let resultado = 0;
 let resultadoAux = 0;
 let carrito = [];
 
-class cliente {
-    constructor(nombre, edad, direccion) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.direccion = direccion;
-    }
+// class cliente {
+//     constructor(nombre, edad, direccion) {
+//         this.nombre = nombre;
+//         this.edad = edad;
+//         this.direccion = direccion;
+//     }
 
-}
+// }
 class Producto {
     constructor(nombre, precio, id) {
         this.nombre = nombre;
@@ -56,28 +56,36 @@ function suma(numeroA, numeroB) {
 }
 
 //Variables usadas
-const cliente1 = new cliente(prompt("¿Cómo te llamas?"), prompt("¿Que edad tenés?"), prompt("¿Dirección de envio?"));
+let nombreCliente = prompt("¿Cómo te llamas?");
+let edad = prompt("¿Que edad tenés?");
+let direccion = prompt("¿Dirección de envio?");
+//const cliente1 = new cliente(prompt("¿Cómo te llamas?"), , );
+if (nombreCliente != null) {
+    localStorage.setItem("cliente", nombreCliente);
+    localStorage.setItem("edad", edad);
+    localStorage.setItem("direccion", direccion);
 
+}
 //console.log(cliente1);
-Compras.push(cliente1);
+//Compras.push(cliente1);
 
-alert("Hola " + cliente1.nombre + "! \nEn cual de los artículos estás interesado " + cliente1.nombre + "?" + "\n" + "Podés elegir: " + "\n" + "-Agenda\n -Cuaderno\n -Lapicera");
+alert("Hola! \nEn cual de los artículos estás interesado " + localStorage.getItem(nombreCliente) + "?" + "\n" + "Podés elegir: " + "\n" + "-Agenda\n -Cuaderno\n -Lapicera");
 let Articulo = prompt("Ingrese uno de los artículos mencionados");
 
 resultadoAux = calcular(Articulo);
 resultado = suma(resultadoAux, resultado);
 
-let condicion = prompt("Si quiere seleccionar otro articulo escriba la palabra OK");
+let condicion = confirm("Desea agregar más artículos?");
 
 //Condición loop
-while (condicion == "OK") {
+while (condicion) {
 
     alert("En que otro artículo estás interesado?" + "\n" + "Podés elegir: " + "\n" + "- Agenda \n -Cuaderno\n -Lapicera");
     let Articulo = prompt("Ingrese uno de los artículos mencionados");
     resultadoAux = calcular(Articulo);
     resultado = suma(resultadoAux, resultado);
     alert("Hasta acá llevas : " + resultado);
-    condicion = prompt("Si quiere seleccionar otro articulo escriba la palabra OK.\n Si no presione un caracter aleatorio");
+    condicion = confirm("Desea continuar agregando artículos?");
 
 }
 
@@ -87,4 +95,5 @@ for (const Prod of carrito) {
     alert("Lleva " + Prod.cant + " unidades " + "del artículo " + Prod.prod)
 
 }
-alert("Muchas gracias por tu compra " + cliente1.nombre + ",te esperamos!");
+alert("Muchas gracias por tu compra " + localStorage.getItem(nombreCliente) + ",te esperamos!");
+localStorage.clear()
