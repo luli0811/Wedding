@@ -13,7 +13,7 @@
 </head>
 
 <body class="nosotros">
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 
     <header class="header">
         <div class="div-header">
@@ -62,15 +62,15 @@
 
                 <section>
                     <label for="exampleFormControlInput1">Nombre <font color="red">*</font> </label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" required>
+                    <input type="text" class="form-control" id="nombre" id="exampleFormControlInput1" placeholder="Nombre" required>
                 </section>
                 <section>
                     <label for="exampleFormControlInput1">Apellido</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Apellido">
+                    <input type="text" class="form-control" id="apellido" id="exampleFormControlInput1" placeholder="Apellido">
                 </section>
                 <section>
-                    <label for="exampleFormControlInput1">Email  <font color="red">*</font></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+                    <label for="exampleFormControlInput1">Email<font color="red">*</font></label>
+                    <input type="email" class="form-control" id="correo" id="exampleFormControlInput1" placeholder="name@example.com" required>
                 </section>
                 <section>
                     <label for="exampleFormControlInput1">Teléfono  <font color="red">*</font></label>
@@ -111,7 +111,7 @@
                 </section>
                 <section>
                     <label for="exampleFormControlInput1">Ciudad <font color="red">*</font></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ciudad">
+                    <input type="text" class="form-control" id="ciud" id="exampleFormControlInput1" placeholder="Ciudad">
                 </section>
             </div>
             <h3>Características de la impresión</h3>
@@ -119,23 +119,23 @@
                 <section>
                     <label for="exampleFormControlSelect1">Tamaño de impresión <font color="red">*</font></label>
                     <div>
-                        <select class="form-control" name="provincia" id="provincia" size="1" class="input-xlarge" required="">
+                        <select class="form-control" name="tamañohoja" id="tamañohojas" size="1" class="input-xlarge" required="">
                        
-                                                        <option value="1">A4</option>
-                                                        <option value="2">A5</option>
-                                                        <option value="3">A3</option>
-                                                        <option value="3">Oficio</option>
+                                                        <option value="A4">A4</option>
+                                                        <option value="A5">A5</option>
+                                                        <option value="A3">A3</option>
+                                                        <option value="Oficio">Oficio</option>
                                                     </select>
 
                     </div>
                 </section>
                 <section>
                     <label for="exampleFormControlSelect1">Cantidad de hojas blanco/negro <font color="red">*</font></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Número" required>
+                    <input type="text" class="form-control" id="cantidadhojasbn" id="exampleFormControlInput1" placeholder="Número" required>
                 </section>
                 <section>
                     <label for="exampleFormControlSelect1">Cantidad de hojas color <font color="red">*</font></label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Número" required>
+                    <input type="text" class="form-control" id="cantidadhojascolor" id="exampleFormControlInput1" placeholder="Número" required>
                 </section>
             </div>
             <h3>Terminación de tapas</h3>
@@ -146,12 +146,12 @@
                     </div>
                     <div class="radios">
                         <div class="radio1">
-                            <input class="radio" type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                            <input class="radio" type="radio" id="customRadio1" name="customRadio1" class="custom-control-input">
                             <label class="custom-control-label" for="customRadio1">Si</label>
                         </div>
                         <div class="radio2">
-                            <input class="radio" type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio1">No</label>
+                            <input class="radio" type="radio" id="customRadio2" name="customRadio1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">No</label>
                         </div>
                     </div>
 
@@ -163,12 +163,12 @@
                     </div>
                     <div class="radios">
                         <div class="radio3">
-                            <input class="radio" type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio1">Brillante</label>
+                            <input class="radio" type="radio" id="customRadio3" name="customRadio2" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio3">Brillante</label>
                         </div>
                         <div class="radio4">
-                            <input class="radio" type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio1">Mate</label>
+                            <input class="radio" type="radio" id="customRadio4" name="customRadio2" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio4">Mate</label>
                         </div>
                     </div>
                 </section>
@@ -188,8 +188,8 @@
 
             </div>
             <div class="botones">
-                <input type="submit" class="btn btn-primary" value="Enviar datos!" onclick="alert('Nos prondremos en contacto a la brevedad! Muchas gracias.')">
-                <input type="reset" class="btn btn-primary">
+                <input type="submit" class="btn btn-primary" value="Enviar datos!" onclick="tomarDatos()">
+                <input type="reset" class="btn btn-primary" onclick="borrarDatos()">
             </div>
         </form>
     </main>
