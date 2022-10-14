@@ -424,8 +424,21 @@ form h3 {
 
 .lead,
 .precio,
-.btn {
+.btn,
+.cantidadart {
     font-size: 70%;
+}
+
+.cantidadart {
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+}
+
+.cantidad {
+    width: 50%;
 }
 
 .item {
@@ -594,5 +607,9 @@ form h3 {
     .items {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+    .cantidadart {
+        font-size: 100%;
+        width: 100%;
     }
 }

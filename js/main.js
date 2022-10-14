@@ -10,20 +10,78 @@ let Productosjs = [];
 //     }
 
 // }
-class Producto {
-    constructor(obj) {
-        this.nombre = obj.producto.toUpperCase();
-        this.precio = parseFloat(obj.precio);
-        this.id = parseInt(obj.id);
-    }
-    mostrarPrecio() {
-        alert("El producto " + this.nombre + " cuesta: $" + this.precio);
-    }
+// class Producto {
+//     constructor(obj) {
+//         this.nombre = obj.producto.toUpperCase();
+//         this.precio = parseFloat(obj.precio);
+//         this.id = parseInt(obj.id);
+//     }
+//     mostrarPrecio() {
+//         alert("El producto " + this.nombre + " cuesta: $" + this.precio);
+//     }
+// }
+// const Productos = [{ producto: "Agenda", precio: 4500, id: "001" },
+//     { producto: "Lapicera", precio: 100, id: "002" },
+//     { producto: "Cuaderno", precio: 1500, id: "003" }
+// ];
+const Productos = [{
+        id: 1,
+        nombre: "Agenda cuaderno con hojas intercambiables1",
+        costo: 4500,
+        imagen: "../img/Agendas/cuadernoint1.jpg",
+    },
+    {
+        id: 2,
+        nombre: "Agenda cuaderno con hojas intercambiables2",
+        costo: 4500,
+        imagen: "../img/Agendas/cuadernoint6.jpg",
+    }, {
+        id: 3,
+        nombre: "Agenda cuaderno con hojas intercambiables3",
+        costo: 4900,
+        imagen: "../img/Agendas/cuadernoint2.jpg",
+    }, {
+        id: 1,
+        nombre: "Agenda cuaderno con hojas intercambiables4",
+        costo: 5500,
+        imagen: "../img/Agendas/cuadernoint3.jpg",
+    }, {
+        id: 1,
+        nombre: "Agenda cuaderno con hojas intercambiables5",
+        costo: 4500,
+        imagen: "../img/Agendas/cuadernoint4.jpg",
+    },
+
+]
+for (const objeto of Productos) {
+    let elementoSection = document.createElement("section");
+    elementoSection.classList.add('item')
+    console.log(elementoSection);
+    let plantilla = `   <div class="foto-producto">
+                        <img src="${objeto.imagen}" alt="agenda">
+                        </div>
+                        <div class="desc">
+                        <div class="descripción">
+                        <p class="lead">${objeto.nombre} </p>
+                        </div>  
+                        <div class="precio">
+                        <span class="main-price">$${objeto.costo}</span>
+                        </div> 
+                        <div class="cantidadart">
+                        <label for="exampleFormControlSelect1">Cantidad:</label>
+                        <input type="text" class="form-control" id="cantidad" id="exampleFormControlInput1" placeholder="Número">
+                        </div>
+                        <div class="boton-compra">
+                        <button type="button" class="btn btn-info" onclick="añadiralcarrito()" >Añadir al carrito</button>
+                        </div>
+                        </div>`;
+
+    elementoSection.innerHTML = plantilla;
+
+    const seccion = document.getElementById("productos");
+    seccion.appendChild(elementoSection)
 }
-const Productos = [{ producto: "Agenda", precio: 4500, id: "001" },
-    { producto: "Lapicera", precio: 100, id: "002" },
-    { producto: "Cuaderno", precio: 1500, id: "003" }
-];
+
 // const Producto1 = new Producto("Agenda", 4500, "001");
 // const Producto2 = new Producto("Lapicera", 100, "002");
 // const Producto3 = new Producto("Cuaderno", 1500, "003");
@@ -205,6 +263,7 @@ function tomarDatos() {
                 cuenta = cuenta + 130;
             }
         }
+
         alert("El total es " + cuenta);
     } else {
         alert("Debe completar los campos obligatorios");
@@ -225,10 +284,4 @@ function borrarDatos() {
     document.getElementById("customRadio2").value = "";
     document.getElementById("customRadio3").value = "";
     document.getElementById("customRadio4").value = "";
-
-
-}
-
-function calculo() {
-
 }
