@@ -10,16 +10,18 @@ let Productosjs = [];
 //     }
 
 // }
-// class Producto {
-//     constructor(obj) {
-//         this.nombre = obj.producto.toUpperCase();
-//         this.precio = parseFloat(obj.precio);
-//         this.id = parseInt(obj.id);
-//     }
-//     mostrarPrecio() {
-//         alert("El producto " + this.nombre + " cuesta: $" + this.precio);
-//     }
-// }
+class Producto {
+    constructor(obj) {
+            this.id = parseInt(obj.id);
+            this.nombre = obj.nombre;
+            this.costo = parseFloat(obj.costo);
+            this.imagen = obj.imagen;
+
+        }
+        // mostrarPrecio() {
+        //     alert("El producto " + this.nombre + " cuesta: $" + this.precio);
+        // }
+}
 // const Productos = [{ producto: "Agenda", precio: 4500, id: "001" },
 //     { producto: "Lapicera", precio: 100, id: "002" },
 //     { producto: "Cuaderno", precio: 1500, id: "003" }
@@ -41,12 +43,12 @@ const Productos = [{
         costo: 4900,
         imagen: "../img/Agendas/cuadernoint2.jpg",
     }, {
-        id: 1,
+        id: 4,
         nombre: "Agenda cuaderno con hojas intercambiables4",
         costo: 5500,
         imagen: "../img/Agendas/cuadernoint3.jpg",
     }, {
-        id: 1,
+        id: 5,
         nombre: "Agenda cuaderno con hojas intercambiables5",
         costo: 4500,
         imagen: "../img/Agendas/cuadernoint4.jpg",
@@ -69,10 +71,10 @@ for (const objeto of Productos) {
                         </div> 
                         <div class="cantidadart">
                         <label for="exampleFormControlSelect1">Cantidad:</label>
-                        <input type="text" class="form-control" id="cantidad" id="exampleFormControlInput1" placeholder="Número">
+                        <input type="text" id="cantidad${objeto.id}"  class="form-control" id="exampleFormControlInput1" placeholder="Número">
                         </div>
                         <div class="boton-compra">
-                        <button type="button" class="btn btn-info" onclick="añadiralcarrito()" >Añadir al carrito</button>
+                        <button type="button" class="btn btn-info" onclick="añadiralcarrito(${objeto.id},)" >Añadir al carrito</button>
                         </div>
                         </div>`;
 
@@ -94,33 +96,37 @@ function calcular(art, condicion) {
     let cantidad;
     let resultadocalcular = 0;
     let agregar;
-    let busqueda = Productosjs.find(objetos => objetos.nombre == art)
+    console.log(Productosjs)
+    let busqueda = Productos.find(objetos => parseInt(objetos.id) == parseInt(art))
+
     if (!condicion) {
         if (busqueda != null) {
-            busqueda.mostrarPrecio();
-            cantidad = prompt("Ingrese la cantidad que desea");
-            resultadocalcular = parseInt(cantidad) * busqueda.precio;
+            // busqueda.mostrarPrecio();
+            let algo = "cantidad" + art;
+            cantidad = document.getElementById(algo).value;
+            resultadocalcular = parseInt(cantidad) * busqueda.costo;
             agregar = confirm("Este producto suma " + resultadocalcular + " deseas llevarlo?");
             if (agregar) {
                 let item = { cant: cantidad, prod: art }
                 carrito.push(item);
             }
-            console.log(carrito);
+            // console.log(carrito);
         } else {
             prompt("El artículo no existe")
 
         }
-    } else {
-        for (const articulo of carrito) {
-            if (articulo.prod == art) {
-                resultadocalcular = articulo.cant * busqueda.precio;
-                carrito = carrito.filter((item) => item.prod != art);
-                console.log(carrito)
-                alert("Se elimino el artículo");
-            }
-
-        }
     }
+    // else {
+    //     for (const articulo of carrito) {
+    //         if (articulo.prod == art) {
+    //             resultadocalcular = articulo.cant * busqueda.precio;
+    //             carrito = carrito.filter((item) => item.prod != art);
+    //             console.log(carrito)
+    //             alert("Se elimino el artículo");
+    //         }
+
+    //     }
+    // }
     return (resultadocalcular);
 }
 
@@ -143,57 +149,70 @@ for (objeto of almacenados) {
 
 }
 
+//PRODUCTOS
+function añadiralcarrito(articuloId) {
+    if (sessionStorage.getItem("cliente") == null) {
+        let nombreCliente = prompt("¿Cómo te llamas?");
+        let edad = prompt("¿Que edad tenés?");
+        let direccion = prompt("¿Dirección de envio?");
+        //const cliente1 = new cliente(prompt("¿Cómo te llamas?"), , );
+        if (nombreCliente != null) {
+            sessionStorage.setItem("cliente", nombreCliente);
+            sessionStorage.setItem("edad", edad);
+            sessionStorage.setItem("direccion", direccion);
 
-//Variables usadas
-let nombreCliente = prompt("¿Cómo te llamas?");
-let edad = prompt("¿Que edad tenés?");
-let direccion = prompt("¿Dirección de envio?");
-//const cliente1 = new cliente(prompt("¿Cómo te llamas?"), , );
-if (nombreCliente != null) {
-    sessionStorage.setItem("cliente", nombreCliente);
-    sessionStorage.setItem("edad", edad);
-    sessionStorage.setItem("direccion", direccion);
+        }
+    }
+    let condicioncompra = false;
+    let idArticulo = articuloId;
+    resultadoAux = calcular(idArticulo, condicioncompra);
+    resultado = suma(resultadoAux, resultado);
 
 }
+//Variables usadas
+
 //console.log(cliente1);
 //Compras.push(cliente1);
 
-alert("Hola! \nEn cual de los artículos estás interesado " + sessionStorage.getItem("cliente") + "?" + "\n" + "Podés elegir: " + "\n" + "-Agenda\n -Cuaderno\n -Lapicera");
-let Articulo = prompt("Ingrese uno de los artículos mencionados");
-Articulo = Articulo.toUpperCase();
-resultadoAux = calcular(Articulo, false);
-resultado = suma(resultadoAux, resultado);
+// alert("Hola! \nEn cual de los artículos estás interesado " + sessionStorage.getItem("cliente") + "?" + "\n" + "Podés elegir: " + "\n" + "-Agenda\n -Cuaderno\n -Lapicera");
+// let Articulo = prompt("Ingrese uno de los artículos mencionados");
+// Articulo = Articulo.toUpperCase();
 
-let condicion = confirm("Desea agregar más artículos?");
+
+// let condicion = confirm("Desea agregar más artículos?");
 
 //Condición loop
-while (condicion) {
+// while (condicion) {
 
-    alert("En que otro artículo estás interesado?" + "\n" + "Podés elegir: " + "\n" + "- Agenda \n -Cuaderno\n -Lapicera");
-    let Articulo = prompt("Ingrese uno de los artículos mencionados");
-    resultadoAux = calcular(Articulo.toUpperCase());
-    resultado = suma(resultadoAux, resultado);
-    alert("Hasta acá llevas : " + resultado);
-    condicion = confirm("Desea continuar agregando artículos?");
+//     alert("En que otro artículo estás interesado?" + "\n" + "Podés elegir: " + "\n" + "- Agenda \n -Cuaderno\n -Lapicera");
+//     let Articulo = prompt("Ingrese uno de los artículos mencionados");
+//     resultadoAux = calcular(Articulo.toUpperCase());
+//     resultado = suma(resultadoAux, resultado);
+//     alert("Hasta acá llevas : " + resultado);
+//     condicion = confirm("Desea continuar agregando artículos?");
 
-}
-
-alert("El total de la compra es: " + resultado);
-
-for (const Prod of carrito) {
-    alert("Lleva " + Prod.cant + " unidades " + "del artículo " + Prod.prod)
-}
-let eliminar = confirm("¿Desea eliminar algún artículo de los mencionados?")
-if (eliminar) {
-    art = prompt("Que artículo queres eliminar?" + "\n" + "Podés elegir: " + "\n" + "- Agenda \n -Cuaderno\n -Lapicera")
-    resultadoAux = calcular(art.toUpperCase(), eliminar);
-    alert("Se resta del monto: " + resultadoAux);
-    resultado = resta(resultado, resultadoAux);
+// }
+function concluirCompra() {
     alert("El total de la compra es: " + resultado);
+
+    for (const Prod of carrito) {
+        alert("Lleva " + Prod.cant + " unidades " + "del artículo " + Prod.prod)
+    }
+    alert("El envio se hará a:" + sessionStorage.getItem("direccion"))
+    alert("Muchas gracias por tu compra " + sessionStorage.getItem("cliente") + ",te esperamos!");
+    sessionStorage.clear();
 }
-alert("El envio se hará a:" + sessionStorage.getItem("direccion"))
-alert("Muchas gracias por tu compra " + sessionStorage.getItem("cliente") + ",te esperamos!");
-localStorage.clear();
+
+// let eliminar = confirm("¿Desea eliminar algún artículo de los mencionados?")
+// if (eliminar) {
+//     art = prompt("Que artículo queres eliminar?" + "\n" + "Podés elegir: " + "\n" + "- Agenda \n -Cuaderno\n -Lapicera")
+//     resultadoAux = calcular(art.toUpperCase(), eliminar);
+//     alert("Se resta del monto: " + resultadoAux);
+//     resultado = resta(resultado, resultadoAux);
+//     alert("El total de la compra es: " + resultado);
+// }
+
+
 
 //PRESUPUESTO
 function tomarDatos() {
