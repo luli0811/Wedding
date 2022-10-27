@@ -185,16 +185,21 @@
                         <textarea class="form-comentarios" name="name" id="comentarios" rows="8"></textarea>
                     </div>
                 </section>
-                <section id="resultados">
+                <section id="devolucion-presupuesto" class="devolucion-presupuesto">
 
                 </section>
 
             </div>
             <div class="botones">
-                <input type="submit" class="btn btn-primary" value="Enviar datos!" onclick="tomarDatos()">
+                <button id="calcular-monto" class="btn btn-primary">Enviar datos!</button>
+
                 <input type="reset" class="btn btn-primary" onclick="borrarDatos()">
             </div>
+
+
+
         </form>
+
     </main>
     <footer class="footer">
 
@@ -242,6 +247,7 @@
         </section>
 
     </footer>
+
     <script src="../js/main.js"></script>
 </body>
 

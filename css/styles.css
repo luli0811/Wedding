@@ -337,6 +337,15 @@ form h3 {
     column-gap: 25px;
 }
 
+.devolucion-presupuesto-1 {
+    border: 4px solid rgb(66, 194, 255);
+}
+
+.form-group {
+    display: flex;
+    flex-grow: wrap;
+}
+
 
 /*CONTACTO.HTML*/
 

@@ -2,30 +2,17 @@ let resultado = 0;
 let resultadoAux = 0;
 let carrito = [];
 let Productosjs = [];
-// class cliente {
-//     constructor(nombre, edad, direccion) {
-//         this.nombre = nombre;
-//         this.edad = edad;
-//         this.direccion = direccion;
-//     }
 
-// }
 class Producto {
     constructor(obj) {
-            this.id = parseInt(obj.id);
-            this.nombre = obj.nombre;
-            this.costo = parseFloat(obj.costo);
-            this.imagen = obj.imagen;
+        this.id = parseInt(obj.id);
+        this.nombre = obj.nombre;
+        this.costo = parseFloat(obj.costo);
+        this.imagen = obj.imagen;
 
-        }
-        // mostrarPrecio() {
-        //     alert("El producto " + this.nombre + " cuesta: $" + this.precio);
-        // }
+    }
 }
-// const Productos = [{ producto: "Agenda", precio: 4500, id: "001" },
-//     { producto: "Lapicera", precio: 100, id: "002" },
-//     { producto: "Cuaderno", precio: 1500, id: "003" }
-// ];
+
 const Productos = [{
         id: 1,
         nombre: "Agenda cuaderno con hojas intercambiables1",
@@ -55,11 +42,12 @@ const Productos = [{
     },
 
 ]
+
 for (const objeto of Productos) {
-    let elementoSection = document.createElement("section");
-    elementoSection.classList.add('item')
-    console.log(elementoSection);
-    let plantilla = `   <div class="foto-producto">
+    let elementoSection1 = document.createElement("section");
+    elementoSection1.classList.add('item')
+
+    let plantilla1 = `   <div class="foto-producto">
                         <img src="${objeto.imagen}" alt="agenda">
                         </div>
                         <div class="desc">
@@ -78,17 +66,13 @@ for (const objeto of Productos) {
                         </div>
                         </div>`;
 
-    elementoSection.innerHTML = plantilla;
+    elementoSection1.innerHTML = plantilla1;
 
-    const seccion = document.getElementById("productos");
-    seccion.appendChild(elementoSection)
+    let seccion1 = document.getElementById("productos");
+    seccion1.appendChild(elementoSection1);
 }
 
-// const Producto1 = new Producto("Agenda", 4500, "001");
-// const Producto2 = new Producto("Lapicera", 100, "002");
-// const Producto3 = new Producto("Cuaderno", 1500, "003");
 
-//const Productos = [Producto1, Producto2, Producto3];
 const Compras = [];
 
 //Funcion calculo por producto.
@@ -110,23 +94,13 @@ function calcular(art, condicion) {
                 let item = { cant: cantidad, prod: art }
                 carrito.push(item);
             }
-            // console.log(carrito);
+
         } else {
             prompt("El artículo no existe")
 
         }
     }
-    // else {
-    //     for (const articulo of carrito) {
-    //         if (articulo.prod == art) {
-    //             resultadocalcular = articulo.cant * busqueda.precio;
-    //             carrito = carrito.filter((item) => item.prod != art);
-    //             console.log(carrito)
-    //             alert("Se elimino el artículo");
-    //         }
 
-    //     }
-    // }
     return (resultadocalcular);
 }
 
@@ -149,13 +123,13 @@ for (objeto of almacenados) {
 
 }
 
+
 //PRODUCTOS
 function añadiralcarrito(articuloId) {
     if (sessionStorage.getItem("cliente") == null) {
         let nombreCliente = prompt("¿Cómo te llamas?");
         let edad = prompt("¿Que edad tenés?");
         let direccion = prompt("¿Dirección de envio?");
-        //const cliente1 = new cliente(prompt("¿Cómo te llamas?"), , );
         if (nombreCliente != null) {
             sessionStorage.setItem("cliente", nombreCliente);
             sessionStorage.setItem("edad", edad);
@@ -169,29 +143,7 @@ function añadiralcarrito(articuloId) {
     resultado = suma(resultadoAux, resultado);
 
 }
-//Variables usadas
 
-//console.log(cliente1);
-//Compras.push(cliente1);
-
-// alert("Hola! \nEn cual de los artículos estás interesado " + sessionStorage.getItem("cliente") + "?" + "\n" + "Podés elegir: " + "\n" + "-Agenda\n -Cuaderno\n -Lapicera");
-// let Articulo = prompt("Ingrese uno de los artículos mencionados");
-// Articulo = Articulo.toUpperCase();
-
-
-// let condicion = confirm("Desea agregar más artículos?");
-
-//Condición loop
-// while (condicion) {
-
-//     alert("En que otro artículo estás interesado?" + "\n" + "Podés elegir: " + "\n" + "- Agenda \n -Cuaderno\n -Lapicera");
-//     let Articulo = prompt("Ingrese uno de los artículos mencionados");
-//     resultadoAux = calcular(Articulo.toUpperCase());
-//     resultado = suma(resultadoAux, resultado);
-//     alert("Hasta acá llevas : " + resultado);
-//     condicion = confirm("Desea continuar agregando artículos?");
-
-// }
 function concluirCompra() {
     alert("El total de la compra es: " + resultado);
 
@@ -202,20 +154,11 @@ function concluirCompra() {
     alert("Muchas gracias por tu compra " + sessionStorage.getItem("cliente") + ",te esperamos!");
     sessionStorage.clear();
 }
-
-// let eliminar = confirm("¿Desea eliminar algún artículo de los mencionados?")
-// if (eliminar) {
-//     art = prompt("Que artículo queres eliminar?" + "\n" + "Podés elegir: " + "\n" + "- Agenda \n -Cuaderno\n -Lapicera")
-//     resultadoAux = calcular(art.toUpperCase(), eliminar);
-//     alert("Se resta del monto: " + resultadoAux);
-//     resultado = resta(resultado, resultadoAux);
-//     alert("El total de la compra es: " + resultado);
-// }
-
-
+let cuenta = 0;
 
 //PRESUPUESTO
 function tomarDatos() {
+    console.log("Hola");
     let nombre = document.getElementById("nombre").value;
     let apellido = document.getElementById("apellido").value;
     let correo = document.getElementById("correo").value;
@@ -229,8 +172,9 @@ function tomarDatos() {
     let fino = document.getElementById("customRadio2").checked;
     let brillo = document.getElementById("customRadio3").checked;
     let mate = document.getElementById("customRadio4").checked;
+
     if (nombre != "" && apellido != "" && correo != "" && telefonoc != "" && prov != "" && ciudad != "" && tamaño != "" && cantidadhjbn != "" && cantidadhjcolor != "") {
-        let cuenta = 0;
+
         if (tamaño == "A4") {
             if (gruesa) {
                 cuenta = parseInt(cantidadhjbn) * 2 + parseInt(cantidadhjcolor) * 5;
@@ -282,12 +226,25 @@ function tomarDatos() {
                 cuenta = cuenta + 130;
             }
         }
+        let elementoSection = document.createElement("section");
+        elementoSection.classList.add('devolucion-presupuesto-1')
 
-        alert("El total es " + cuenta);
+        let plantilla = `<p> El total aproximado de su impresión/fotocopiado sería: ${cuenta}. Muchas gracias por tenernos en cuenta. 
+                     </p>`;
+
+        elementoSection.innerHTML = plantilla;
+
+        const seccion = document.getElementById("devolucion-presupuesto");
+        seccion.appendChild(elementoSection)
+            // mostrarResultado(cuenta);
+
+        // alert("El total es " + cuenta);
     } else {
         alert("Debe completar los campos obligatorios");
     }
 }
+let boton = document.getElementById("calcular-monto");
+boton.addEventListener("click", tomarDatos());
 
 function borrarDatos() {
     document.getElementById("nombre").value = "";
@@ -303,4 +260,4 @@ function borrarDatos() {
     document.getElementById("customRadio2").value = "";
     document.getElementById("customRadio3").value = "";
     document.getElementById("customRadio4").value = "";
-}
+};
