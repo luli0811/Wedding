@@ -100,19 +100,6 @@
     height: 100%;
 }
 
-
-/* .marcadores {
-    padding: 10px;
-}
-
-.inspira {
-    padding: 10px;
-}
-
-.agendas {
-    padding: 10px;
-} */
-
 .banner1 img {
     width: 50%;
     border-radius: 10px;
@@ -282,6 +269,10 @@
 
 /*PRESUPUESTO*/
 
+.lead {
+    margin: 10px;
+}
+
 .heading-bar {
     border-bottom: 1px solid#d9d9d9;
     padding: 6px 0 0;
@@ -302,7 +293,7 @@
 }
 
 form h3 {
-    width: 100%;
+    /* width: 100%; */
     margin: 10px;
     font-size: 18px;
     color: rgb(66, 194, 255);
@@ -331,9 +322,9 @@ form h3 {
 
 .botones {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     padding-bottom: 10px;
-    margin-left: 200px;
+    /* margin-left: 200px; */
     column-gap: 25px;
 }
 
@@ -344,6 +335,7 @@ form h3 {
 .form-group {
     display: flex;
     flex-grow: wrap;
+    flex-direction: column;
 }
 
 
@@ -384,7 +376,7 @@ form h3 {
 /* NOSOTROS.HTML */
 
 .historia {
-    padding: 100px;
+    padding: 30px;
     width: 100%;
     background-color: rgb(66, 194, 255);
     text-align: center;
@@ -393,7 +385,7 @@ form h3 {
 }
 
 .historia-h2 {
-    padding: 40px;
+    font-size: 20px;
     width: 100%;
     text-align: center;
     font-weight: bold;
@@ -410,10 +402,11 @@ form h3 {
 .galeria-h3 {
     text-shadow: rgb(66, 194, 255) 3px 1px 2px;
     text-align: center;
+    font-size: 10px;
 }
 
 .galeria img {
-    width: 25%;
+    width: 70%;
     margin: 10px;
 }
 
@@ -513,15 +506,6 @@ form h3 {
 }
 
 @media(min-width:768px) {
-    /* .caja-logo {
-        width: 100%;
-    } */
-    /* .div-header {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1/2fr;
-        align-items: self-end;
-        width: 100%;
-    } */
     .caja-logo {
         width: 10%;
     }
@@ -561,6 +545,26 @@ form h3 {
         grid-template-rows: 1fr 1fr 1fr 1r;
         grid-template-areas: "contact dir horario-atencion" "tel barcala horarios" "tel octubre horarios" "tel salto horarios";
         height: 340px;
+    }
+    /* NOSOTROS.HTML */
+    .historia {
+        padding: 100px;
+        margin-top: 5px;
+    }
+    .historia-h2 {
+        font-size: 30px;
+        padding: 40px;
+        width: 100%;
+    }
+    .galeria img {
+        width: 25%;
+        margin: 10px;
+    }
+    .historia-p {
+        font-size: 20px;
+    }
+    .galeria-h3 {
+        font-size: 40px;
     }
     /*Presupuesto*/
     .form-group {
