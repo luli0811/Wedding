@@ -17,13 +17,13 @@ body{
 
 .slider img {
     width: 100%;
-    height: 50%;
+    height: 30%;
 }
 
 .cuando {
     width: 100%;
     background-color: #049CB3;
-    height: 60px;
+    height: 80px;
    
 }
 
@@ -32,7 +32,8 @@ body{
     item-position: center;
     color: white;
     font-family:  sans-serif;
-    font-size: 80%;
+    font-size: 150%;
+    margin-top: 20px;
 .footer {
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -40,7 +41,7 @@ body{
     display: flex;
     flex-direction: column;
     height: 100%;
-    font-size: 80%;
+    font-size: 150%;
     border-bottom: 5px solid white;
 }
     .boton{
