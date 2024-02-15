@@ -22,10 +22,8 @@
     height: 20px;
    
 }
-p{
-    text-aling: center;
-}
-.cuando p{
+
+.cuando h1{
     text-aling: center;
     color: white;
     font-family:  system-ui;
@@ -48,8 +46,9 @@ p{
         align-items: self-end;
     }
     .contador {
-        display:grid;
-         align-items: self-end;
+        display:flex;
+        align-items: self-end;
+        height: 70%;
     }
     
 @media(min-width:768px) {
