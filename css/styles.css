@@ -279,14 +279,8 @@ form h3 {
         align-items: self-end;
     }
     
-    .slider {
-        height: 150px;
-    }
     
 @media(min-width:768px) {
-    .slider {
-        height: 250px;
-    }
     
     .footer {
         display: grid;
