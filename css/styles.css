@@ -18,13 +18,13 @@
 
 .cuando {
     width: 100%;
-     background-color: #049CB3;
+    background-color: #049CB3;
+    height: 20px;
    
 }
 .cuando p{
     color: white;
     font-family:  system-ui;
-    height: 20px;
     font-size: 80%;
 .footer {
     color: white;
