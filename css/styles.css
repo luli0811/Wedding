@@ -38,12 +38,5 @@
     
 @media(min-width:768px) {
     
-    .footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1r;
-        grid-template-areas: "contact dir horario-atencion" "tel barcala horarios" "tel octubre horarios" "tel salto horarios";
-        height: 340px;
-    }
    
 }
