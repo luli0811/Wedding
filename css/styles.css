@@ -48,7 +48,7 @@
     .contador {
         display:flex;
         align-items: self-end;
-        height: 70%;
+        height: 20%;
     }
     
 @media(min-width:768px) {
