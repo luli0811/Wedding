@@ -3,7 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    background-image: url("img/fondo.jpg");
+    background-size: 100% 100%;
+}
 .slider li {
     list-style-type: none;
 }
