@@ -39,6 +39,9 @@
     font-size: 80%;
     border-bottom: 5px solid white;
 }
+    .boton {
+        display:grid;
+    }
 
 @media(min-width:576px) {
     .div-header {
