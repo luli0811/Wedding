@@ -23,7 +23,7 @@
    
 }
 
-.cuando h1{
+.cuando h2{
     text-aling: center;
     color: white;
     font-family:  system-ui;
@@ -45,10 +45,11 @@
         grid-template-columns: 60% 40%;
         align-items: self-end;
     }
-    .contador {
+    .countdown {
         display:flex;
         align-items: self-end;
         height: 20%;
+        width: 50%;
     }
     
 @media(min-width:768px) {
