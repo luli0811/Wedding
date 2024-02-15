@@ -19,7 +19,13 @@
 .cuando {
     width: 100%;
      background-color: #049CB3;
+   
 }
+.cuando p{
+    color: white;
+    font-family:  system-ui;
+    height: 20px;
+    font-size: 80%;
 .footer {
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
