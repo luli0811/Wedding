@@ -45,11 +45,12 @@ body{
 }
     .boton a{
         display: inline-block;
+        display: block;
         line-height: 1;
-        background-color: #818a91;
+        background-color: #AFA7B2;
         font-size: 15px;
-        padding: 12px 24px;
-        border-radius: 3px;
+        padding: 22px 34px;
+        border-radius: 4px;
         color: #fff;
         fill: #fff;
         text-align: center;
