@@ -47,7 +47,10 @@ p{
         grid-template-columns: 60% 40%;
         align-items: self-end;
     }
-    
+    .contador {
+        display:grid;
+         align-items: self-end;
+    }
     
 @media(min-width:768px) {
     
