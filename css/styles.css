@@ -40,8 +40,17 @@
     font-size: 80%;
     border-bottom: 5px solid white;
 }
-    .boton {
-        display:grid;
+    .boton a{
+        display: inline-block;
+        line-height: 1;
+        background-color: #818a91;
+        font-size: 15px;
+        padding: 12px 24px;
+        border-radius: 3px;
+        color: #fff;
+        fill: #fff;
+        text-align: center;
+        transition: all .3s;
     }
 
 @media(min-width:576px) {
