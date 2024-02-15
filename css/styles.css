@@ -24,7 +24,7 @@
 }
 
 .cuando li{
-    
+    list-style-type: none;
     text-aling: center;
     color: white;
     font-family:  system-ui;
